@@ -1,7 +1,6 @@
 CREATE TABLE empresas (
     id INT AUTO_INCREMENT PRIMARY KEY, -- Identificador único para cada empresa
     nome VARCHAR(255) NOT NULL, -- Nome da empresa ou contratante
-    cnpj VARCHAR(18), -- CNPJ para empresas no Brasil (formato 00.000.000/0000-00)
     endereco VARCHAR(255), -- Endereço completo da empresa
     cidade VARCHAR(100), -- Cidade da empresa
     estado VARCHAR(50), -- Estado (UF) ou região da empresa
