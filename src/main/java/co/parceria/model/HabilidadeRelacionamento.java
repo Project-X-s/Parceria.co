@@ -1,6 +1,6 @@
-package com.example.model;
+package co.parceria.model;
 
-import com.example.enumeration.TipoEntidade;
+import co.parceria.enumeration.TipoEntidade;
 import jakarta.persistence.*;
 import lombok.Data;
 

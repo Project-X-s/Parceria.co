@@ -1,4 +1,4 @@
-package com.example.model;
+package co.parceria.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,10 +17,15 @@ public class Endereco {
     private String bairro;
     private String cidade;
     private String estado;
+
+    @Column(nullable = false)
     private String cep;
 
     @Column(nullable = false)
     private String pais = "Brasil";
 
+    @ManyToOne
+    @JoinColumn(name = "parceiro_id")
+    private Parceiro parceiro;
 }
 

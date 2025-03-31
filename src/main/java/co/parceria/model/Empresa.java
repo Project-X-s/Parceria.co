@@ -1,9 +1,10 @@
-package com.example.model;
+package co.parceria.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,14 +15,15 @@ public class Empresa {
     private Long id;
 
     private String nome;
-    private String endereco;
-    private String cidade;
-    private String estado;
-    private String cep;
-    private String telefone;
-    private String email;
+    
+    private List<Endereco> enderecos; 
+
+    private List<Contato> contatos;
+
     private String website;
+    
     private String setor;
+    
     private String descricao;
 
     @Column(name = "data_cadastro", nullable = false, updatable = false)

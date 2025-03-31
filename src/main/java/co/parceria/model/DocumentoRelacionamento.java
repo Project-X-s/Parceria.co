@@ -1,24 +1,23 @@
-package com.example.model;
+package co.parceria.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
-import com.example.enumeration.TipoEntidade;
+import co.parceria.enumeration.TipoEntidade;
 
 @Data
 @Entity
-@Table(name = "enderecos_relacionamentos")
-public class EnderecoRelacionamento {
-
+@Table(name = "documentos_relacionamentos")
+public class DocumentoRelacionamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "endereco_id", nullable = false)
-    private Endereco endereco;
+    @JoinColumn(name = "documento_id", nullable = false)
+    private Documento documento;
 
     @Column(name = "entidade_id", nullable = false)
     private Long entidadeId;

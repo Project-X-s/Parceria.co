@@ -1,4 +1,4 @@
-package com.example.model;
+package co.parceria.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -13,15 +13,22 @@ public class Contato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tipo_contato", nullable = false)
-    private String tipoContato;
+    @Column(nullable = false)
+    private String tipo;
 
-    @Column(name = "valor_contato", nullable = false)
-    private String valorContato;
+    @Column(nullable = false)
+    private String valor;
 
     private String descricao;
 
     @Column(name = "data_criacao", nullable = false, updatable = false)
     private LocalDateTime dataCriacao = LocalDateTime.now();
 
+    @ManyToOne
+    @JoinColumn(name = "parceiro_id")
+    private Parceiro parceiro;
+
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 }

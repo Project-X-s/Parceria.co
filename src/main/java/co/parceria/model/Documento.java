@@ -1,4 +1,4 @@
-package com.example.model;
+package co.parceria.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -23,4 +23,13 @@ public class Documento {
 
     @Column(name = "data_envio", nullable = false, updatable = false)
     private LocalDateTime dataEnvio = LocalDateTime.now();
+
+    @ManyToOne
+    @JoinColumn(name = "parceiro_id")
+    private Parceiro parceiro;
+
+
+    @ManyToOne
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco;
 }

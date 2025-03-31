@@ -1,11 +1,11 @@
-package com.example.model;
+package co.parceria.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
-import com.example.enumeration.TipoEntidade;
+import co.parceria.enumeration.TipoEntidade;
 
 @Data
 @Entity
